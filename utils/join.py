@@ -13,4 +13,6 @@ with open('data/plot_summaries.txt', 'r', encoding='utf-8') as f:
 plot_df = pd.DataFrame(list(plot_dict.items()), columns=['wiki_id', 'plot_summary'])
 
 df = pd.merge(metadata, plot_df, on='wiki_id', how='inner')
+df.to_csv('data/processed_movie_data.csv', index=False)
+
 print(df.head())
