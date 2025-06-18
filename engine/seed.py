@@ -4,7 +4,7 @@ import hashlib
 from pinecone import Pinecone
 from sentence_transformers import SentenceTransformer
 
-API_KEY = "pcsk_vajkE_973hVdKMVwgN5XU83ZBZvr8SUGGTmhW8qk9Ew3zGozSkNfiM2r4tssfaFD6L8Ka"  
+API_KEY = "YOUR_PINECONE_API_KEY" 
 INDEX_NAME = "all-minilm-16-v2-384-dims"
 NAMESPACE = 'movies1'
 
