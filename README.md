@@ -22,7 +22,7 @@ This script reads the `processed_movie_data.csv` file and creates vector embeddi
 - ### engine/rec.py
 The main interaction file. Users can input a movie title or a custom plot and receive top 5 recommendations based on cosine similarity in vector space. Includes an option to view plot summaries of recommended movies.
 
-- ### utils/fetch.py
+- ### `utils/fetch.py`
   This utility script retrieves plot summaries and Wikipedia-based metadata for movies using their internal wiki ID. It performs simple title-to-ID lookup and can request movie names    via Wikipedia's public API.
 
 ## Limitations
