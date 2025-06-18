@@ -16,7 +16,7 @@ All data is released under a Creative Commons Attribution-ShareAlike License.
 
 ## Key Files
 
-- ## `engine/seed.py`
+- engine/seed.py
 This script reads the `processed_movie_data.csv` file and creates vector embeddings for each movie plot using the sentence-transformers/all-MiniLM-L6-v2 model. Each embedding is stored in Pinecone under the index `all-minilm-16-v2-384-dims` and namespace `movies1`.
 > link for the embedding model: [huggingface.co](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
