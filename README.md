@@ -1,6 +1,6 @@
 # Movie Recommendation Engine
 
-This is a lightweight movie recommendation system that uses **Pinecone vector search** and **sentence-transformers** to suggest similar movies based on either a movie title or a plot summary.
+This is a lightweight movie recommendation system that uses [Pinecone](pinecone.io) vector search and sentence-transformers to suggest similar movies based on either a movie title or a plot summary.
 
 ## Dataset
 
