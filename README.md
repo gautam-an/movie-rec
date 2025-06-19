@@ -17,19 +17,20 @@ All data is released under a Creative Commons Attribution-ShareAlike License.
 ## Key Files
 
 - ## engine/seed.py
-  This script reads the `processed_movie_data.csv` file and creates vector embeddings for each movie plot using the `sentence-transformers/all-MiniLM-L6-v2` model. Each embedding is       stored in Pinecone under the index `all-minilm-16-v2-384-dims` and namespace `movies1`.
+  This script reads the `processed_movie_data.csv` file and creates vector embeddings for each movie plot using the `sentence-transformers/all-MiniLM-L6-v2` model. Each embedding is   stored in Pinecone under the index `all-minilm-16-v2-384-dims` and namespace `movies1`. The script processes each movie sequentially, generating a unique vector ID using SHA-1       hashing of the Wikipedia ID, and includes metadata such as the movie title, plot description, and creation timestamp for efficient retrieval and filtering.
   > link for the embedding model: [huggingface.co](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
 - ## engine/rec.py
   The main interaction file. Users can input a movie title or a custom plot and receive top 5 recommendations based on cosine similarity in vector space. Includes an option to view      plot summaries of recommended movies.
 
-- ## `utils/fetch.py`
+- ## utils/fetch.py
   This utility script retrieves plot summaries and Wikipedia-based metadata for movies using their internal wiki ID. It performs simple title-to-ID lookup and can request movie names    via Wikipedia's public API.
 
 ## Limitations
 
 - This system includes movies from all time periods. There is currently no filter by decade, language, or genre.
+- The dataset was curated in 2013, so any movies after that are not in the dataset and thus cannot be referenced.
 - The system can be slow on first execution due to the size of the dataset (~42,000 movies).
-- You must have a valid Pinecone API key and access to the correct index to use this. Without that, vector search will fail.
+- You must have a valid Pinecone API key and access to the correct index to use this. Without that, the vector search will fail.
 - Some titles in the dataset may be duplicated or differently formatted, and not all user-input queries may yield results if the match is imprecise.
 - The system does not deduplicate very similar entries in Pinecone, so near-duplicates may appear in recommendations.
